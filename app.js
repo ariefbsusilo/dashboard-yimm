@@ -3,6 +3,7 @@
   const get = id => document.getElementById(id);
   const raw = String(window.DASHBOARD_CONFIG?.appsScriptUrl || "").trim();
   function showSetup(message) {
+    get("pagesLoading").hidden = true;
     get("setup").hidden = false;
     get("setupMessage").textContent = message;
     get("status").textContent = "Dashboard belum terhubung";
@@ -29,11 +30,13 @@
   reload.hidden = false;
   get("help").hidden = false;
   function openFrame() {
+    get("pagesLoading").hidden = false;
     get("status").textContent = "Membuka dashboard…";
     frame.src = url.href;
     frame.hidden = false;
   }
   frame.addEventListener("load", () => {
+    get("pagesLoading").hidden = true;
     get("status").textContent = "Jika layar kosong, pilih Buka langsung";
   });
   reload.addEventListener("click", openFrame);
