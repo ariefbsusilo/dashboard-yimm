@@ -27,6 +27,7 @@
   direct.hidden = false;
   const reload = get("reload");
   reload.hidden = false;
+  get("help").hidden = false;
   function openFrame() {
     get("status").textContent = "Membuka dashboard…";
     frame.src = url.href;
