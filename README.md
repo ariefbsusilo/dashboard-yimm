@@ -2,6 +2,12 @@
 
 Folder ini menyediakan alamat masuk GitHub Pages untuk dashboard Apps Script. Dashboard tampil di iframe dengan tinggi layar penuh. Baca dan simpan data, snapshot, filter, tombol Perbarui, ekspor, serta izin akses Google tetap ditangani aplikasi Apps Script.
 
+## Perbaikan header ganda — 29 Oktober 2026
+
+Header yang tampil berasal dari dashboard Apps Script. Halaman GitHub Pages memakai seluruh tinggi layar dan menyediakan tombol bantuan `?` kecil di kiri bawah; klik untuk membuka **Buka langsung** atau **Muat ulang tampilan**.
+
+Untuk repository yang sudah berjalan, timpa tiga file **index.html**, **app.js**, dan **style.css** dengan file dari versi ini. Ketiganya memakai `config.js` yang sudah terpasang di repository. Simpan commit, tunggu publikasi GitHub Pages selesai, lalu lakukan hard refresh (`Ctrl + Shift + R`).
+
 ## 1. Pasang versi Apps Script
 
 1. Ganti isi `Code.gs` dan `Index.html` dengan file R5 pada paket utama. Simpan dan jalankan `cekVersiDashboard`; hasilnya harus `MP-2810-R5`.
