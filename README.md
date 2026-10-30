@@ -1,6 +1,4 @@
-# New Dashboard R11
-Ganti index.html, app.js, style.css di repository aktif. Pertahankan config.js dan CNAME.
+# New Dashboard R12
+Ganti index.html, app.js, style.css di repository aktif. Pertahankan config.js dan CNAME. Pasang Code.gs dan Index.html R12, jalankan cekKoneksiLoginDashboard, lalu Deploy New version hingga selesai.
 
-Pasang juga Code.gs dan Index.html R11, jalankan cekKoneksiLoginDashboard, lalu Deploy New version dan tunggu selesai. Website dan Script Properties AUTH_APP_ORIGIN harus memakai origin yang sama. Client Secret tetap hanya di Script Properties.
-
-Persiapan login dikirim pada respons awal, disertai diagnosis koneksi. Baca README.txt dan PANDUAN_KONEKSI.md pada akar paket. Detail koneksi tidak berisi Secret atau data sheet.
+R12 memulihkan konfigurasi login yang tidak terbaca dari HTML melalui API publik Apps Script. Data tetap memerlukan login dan AKSES_USER. Tidak perlu mengubah Client ID/Secret yang sudah benar. Baca README.txt dan PANDUAN_KONEKSI.md pada akar ZIP.

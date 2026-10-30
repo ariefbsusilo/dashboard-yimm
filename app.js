@@ -32,13 +32,13 @@
   crypto.getRandomValues(channelBytes);channel=Array.from(channelBytes,b=>b.toString(16).padStart(2,'0')).join('');child=null;childOrigin='';challenge='';client=null;pendingConfig=null;challengeExpires=0;
   get('login').hidden=true;get('pagesLoading').hidden=false;get('connectionDetails').hidden=true;get('connectionBuild').textContent='Belum diterima';get('connectionExpected').textContent='Belum diterima';get('googleLogin').disabled=true;diagnostic('CONNECTING','Menunggu halaman Google');
   connectionTimer=setTimeout(()=>problem('APPS_SCRIPT_NO_RESPONSE','Halaman login Apps Script belum mengirim respons. Buka tautan Buka langsung pada bantuan (?), lalu pastikan URL /exec memakai deployment terbaru yang sudah selesai dan dapat dibuka pengguna.'),45000);
-  frame.hidden=false;const target=new URL(url.href);target.searchParams.set('authChannel',channel);target.searchParams.set('uiBuild','ui-3010-r11');frame.src=target.href;
+  frame.hidden=false;const target=new URL(url.href);target.searchParams.set('authChannel',channel);target.searchParams.set('uiBuild','ui-3010-r12');frame.src=target.href;
  }
  window.addEventListener('message',event=>{
   const data=event.data;if(!data||data.channel!==channel||!event.source||!trustedGoogleOrigin(event.origin))return;
   if(child&&(event.source!==child||event.origin!==childOrigin))return;
   if(data.type==='NACS_BRIDGE_STATUS'){
-   child=event.source;childOrigin=event.origin;clearConnection();diagnostic('HTML_RECEIVED','Halaman Apps Script diterima',data);
+   child=event.source;childOrigin=event.origin;clearConnection();diagnostic(data.phase==='recovering'?'LOGIN_CONFIG_RECOVERING':'HTML_RECEIVED',data.phase==='recovering'?'Membaca konfigurasi login':'Halaman Apps Script diterima',data);
    if(data.origin&&data.origin!==window.location.origin){problem('APP_ORIGIN_MISMATCH','Domain yang dibuka ('+window.location.origin+') berbeda dari AUTH_APP_ORIGIN ('+data.origin+'). Samakan keduanya beserta Authorized JavaScript origins di Google Cloud.','Domain berbeda',data);return;}
    const issue=data.issues?.[0];
    if(data.phase==='error'||issue||data.configured===false){problem(data.code||issue?.code||'LOGIN_CONFIG_INCOMPLETE',data.message||issue?.message||'Konfigurasi login belum lengkap. Jalankan cekKoneksiLoginDashboard dari editor.','Periksa konfigurasi',data);return;}
