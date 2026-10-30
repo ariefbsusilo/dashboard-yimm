@@ -1,4 +1,4 @@
-# New Dashboard R12
-Ganti index.html, app.js, style.css di repository aktif. Pertahankan config.js dan CNAME. Pasang Code.gs dan Index.html R12, jalankan cekKoneksiLoginDashboard, lalu Deploy New version hingga selesai.
+# New Dashboard R12 · CSP Fix 1
+Ganti index.html, app.js, style.css pada repository aktif. Pertahankan config.js dan CNAME. Tunggu Pages selesai, kemudian Ctrl+F5. Website menjadi ui-3010-r12-csp1.
 
-R12 memulihkan konfigurasi login yang tidak terbaca dari HTML melalui API publik Apps Script. Data tetap memerlukan login dan AKSES_USER. Tidak perlu mengubah Client ID/Secret yang sudah benar. Baca README.txt dan PANDUAN_KONEKSI.md pada akar ZIP.
+Perubahan hanya mengizinkan inline CSS yang dibuat library Google; JavaScript tetap memakai allowlist sebelumnya. Atribut fullscreen ganda dirapikan. Tidak perlu deploy ulang Apps Script R12.

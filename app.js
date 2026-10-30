@@ -32,7 +32,7 @@
   crypto.getRandomValues(channelBytes);channel=Array.from(channelBytes,b=>b.toString(16).padStart(2,'0')).join('');child=null;childOrigin='';challenge='';client=null;pendingConfig=null;challengeExpires=0;
   get('login').hidden=true;get('pagesLoading').hidden=false;get('connectionDetails').hidden=true;get('connectionBuild').textContent='Belum diterima';get('connectionExpected').textContent='Belum diterima';get('googleLogin').disabled=true;diagnostic('CONNECTING','Menunggu halaman Google');
   connectionTimer=setTimeout(()=>problem('APPS_SCRIPT_NO_RESPONSE','Halaman login Apps Script belum mengirim respons. Buka tautan Buka langsung pada bantuan (?), lalu pastikan URL /exec memakai deployment terbaru yang sudah selesai dan dapat dibuka pengguna.'),45000);
-  frame.hidden=false;const target=new URL(url.href);target.searchParams.set('authChannel',channel);target.searchParams.set('uiBuild','ui-3010-r12');frame.src=target.href;
+  frame.hidden=false;const target=new URL(url.href);target.searchParams.set('authChannel',channel);target.searchParams.set('uiBuild','ui-3010-r12-csp1');frame.src=target.href;
  }
  window.addEventListener('message',event=>{
   const data=event.data;if(!data||data.channel!==channel||!event.source||!trustedGoogleOrigin(event.origin))return;
