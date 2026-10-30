@@ -1,4 +1,5 @@
-# New Dashboard R12 · CSP Fix 1
-Ganti index.html, app.js, style.css pada repository aktif. Pertahankan config.js dan CNAME. Tunggu Pages selesai, kemudian Ctrl+F5. Website menjadi ui-3010-r12-csp1.
+# New Dashboard R14
 
-Perubahan hanya mengizinkan inline CSS yang dibuat library Google; JavaScript tetap memakai allowlist sebelumnya. Atribut fullscreen ganda dirapikan. Tidak perlu deploy ulang Apps Script R12.
+Ganti index.html, app.js, style.css pada repository aktif. Pertahankan config.js dan CNAME. Pasang Code.gs dan Index.html R14 di Apps Script, lalu Deploy New version hingga selesai.
+
+Penanda website ui-3010-r14; Apps Script MP-3010-R14. Login ringan, batas verifikasi dan CSP dari R13 dipertahankan. Perubahan R14 berada pada data dan UI dashboard: baca README.txt serta RUMUS_DAN_DATA.md di akar ZIP.
