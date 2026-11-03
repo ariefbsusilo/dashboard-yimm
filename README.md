@@ -1,5 +1,5 @@
-# New Dashboard R23
+# New Dashboard R24
 
-Ganti index.html, app.js dan style.css; pertahankan config.js dan CNAME. Pasang Code.gs/Index.html dari akar ZIP, cekVersiDashboard, jalankan prepareDashboardStartup hingga ready:true, lalu Deploy New version pada /exec aktif sampai selesai. Tunggu deployment Pages selesai.
+Pasang Code.gs dan Index.html dari akar ZIP. Jalankan cekVersiDashboard, prepareDashboardSnapshot sekali (koreksi SUMIF Vendor), lalu prepareDashboardStartup sampai ready:true. Deploy New version pada /exec yang sama. Ganti index.html/app.js/style.css Pages; pertahankan config.js dan CNAME. Tunggu deployment selesai.
 
-Website **ui-0211-r23**; Apps Script **MP-0211-R23**; SERVICE tetap **2026-11-02-service-v3**. R23 menyiapkan laporan sebelum kunjungan, membaca salinan perangkat terenkripsi saat login dan membuka isinya sesudah akses Google/AKSES_USER lolos. Perangkat baru tetap mengunduh sekali. SERVICE hanya memuat bulan realisasi, dengan garis total magenta/berlian dan legenda batang/garis. Lihat PANDUAN_STARTUP.md dan PANDUAN_SERVICE.md.
+Website **ui-0311-r24**; Apps Script **MP-0311-R24**. SERVICE memiliki penghubung stack, MoM, target log dan toggle; NACS Vendor memakai SUMIF EVENT REPORT semua dealer per proposal dengan total unik. Alur salinan terenkripsi R23 tetap dipertahankan.
